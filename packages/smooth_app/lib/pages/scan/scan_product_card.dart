@@ -5,6 +5,7 @@ import 'package:smooth_app/data_models/product_preferences.dart';
 import 'package:smooth_app/pages/product/hideable_container.dart';
 import 'package:smooth_app/pages/product/new_product_page.dart';
 import 'package:smooth_app/pages/product/summary_card.dart';
+// import 'package:smooth_app/pages/scan/simple_scan_result.dart';
 
 class ScanProductCard extends StatelessWidget {
   ScanProductCard(this.product)

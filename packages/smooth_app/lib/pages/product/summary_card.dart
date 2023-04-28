@@ -253,7 +253,24 @@ class _SummaryCardState extends State<SummaryCard> {
     final Widget attributesContainer = Container(
       alignment: AlignmentDirectional.topStart,
       margin: const EdgeInsetsDirectional.only(bottom: LARGE_SPACE),
-      child: Column(children: displayedGroups),
+      child: Column(children: [
+        ...displayedGroups,
+        Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Row(children: [
+            ElevatedButton(child: Text('add AM'),
+            onPressed: () => print('Am'),
+            ),
+            SizedBox(width: 5,),
+            ElevatedButton(child: Text('add snack'),
+            onPressed: () => print('snack'),
+            ),
+            SizedBox(width: 5,),
+            ElevatedButton(child: Text('add PM'),
+            onPressed: () => print('PM'),
+            ),
+          ],),
+        )]),
     );
     // cf. https://github.com/openfoodfacts/smooth-app/issues/2147
     const Set<String> blackListedCategories = <String>{
