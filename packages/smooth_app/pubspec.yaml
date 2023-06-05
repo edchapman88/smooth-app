@@ -13,6 +13,7 @@ dependencies:
   flutter_localizations:
     sdk: flutter
 
+  flutter_dotenv: 5.0.0
   badges: 2.0.3 # TODO use the standard flutter Badge instead when available
   barcode_widget: 2.0.3
   carousel_slider: 4.1.1
@@ -179,3 +180,4 @@ flutter:
     - assets/preferences/
     - assets/product/
     - assets/icons/visor_icon.svg
+    - .env

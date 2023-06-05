@@ -17,6 +17,7 @@ import 'package:smooth_app/helpers/score_card_helper.dart';
 import 'package:smooth_app/helpers/ui_helpers.dart';
 import 'package:smooth_app/knowledge_panel/knowledge_panels/knowledge_panel_page.dart';
 import 'package:smooth_app/knowledge_panel/knowledge_panels_builder.dart';
+import 'package:smooth_app/pages/eds_api/handle_eaten.dart';
 import 'package:smooth_app/pages/preferences/user_preferences_page.dart';
 import 'package:smooth_app/pages/product/add_basic_details_page.dart';
 import 'package:smooth_app/pages/product/add_simple_input_button.dart';
@@ -259,15 +260,15 @@ class _SummaryCardState extends State<SummaryCard> {
           padding: const EdgeInsets.all(8.0),
           child: Row(children: [
             ElevatedButton(child: Text('add AM'),
-            onPressed: () => print('Am'),
+            onPressed: () => handleEaten(_product),
             ),
             SizedBox(width: 5,),
             ElevatedButton(child: Text('add snack'),
-            onPressed: () => print('snack'),
+            onPressed: () => handleEaten(_product),
             ),
             SizedBox(width: 5,),
             ElevatedButton(child: Text('add PM'),
-            onPressed: () => print('PM'),
+            onPressed: () => handleEaten(_product),
             ),
           ],),
         )]),

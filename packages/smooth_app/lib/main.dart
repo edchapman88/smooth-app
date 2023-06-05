@@ -34,6 +34,7 @@ import 'package:smooth_app/themes/contrast_provider.dart';
 import 'package:smooth_app/themes/smooth_theme.dart';
 import 'package:smooth_app/themes/theme_provider.dart';
 import 'package:smooth_app/widgets/smooth_scaffold.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 void main() {
   debugPrint('--------');
@@ -61,6 +62,7 @@ Future<void> launchSmoothApp({
   required String appFlavour,
   final bool screenshots = false,
 }) async {
+  await dotenv.load(fileName: ".env");
   _screenshots = screenshots;
   if (_screenshots) {
     await _init1(appStore);
