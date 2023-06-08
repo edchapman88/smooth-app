@@ -27,6 +27,7 @@ import 'package:smooth_app/pages/product/product_questions_widget.dart';
 import 'package:smooth_app/pages/product/simple_input_page_helpers.dart';
 import 'package:smooth_app/query/category_product_query.dart';
 import 'package:smooth_app/query/product_query.dart';
+import 'package:smooth_app/pages/eds_api/seared_item_menu.dart';
 
 const List<String> _ATTRIBUTE_GROUP_ORDER = <String>[
   AttributeGroup.ATTRIBUTE_GROUP_ALLERGENS,
@@ -256,22 +257,7 @@ class _SummaryCardState extends State<SummaryCard> {
       margin: const EdgeInsetsDirectional.only(bottom: LARGE_SPACE),
       child: Column(children: [
         ...displayedGroups,
-        Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: Row(children: [
-            ElevatedButton(child: Text('add AM'),
-            onPressed: () => handleEaten(_product),
-            ),
-            SizedBox(width: 5,),
-            ElevatedButton(child: Text('add snack'),
-            onPressed: () => handleEaten(_product),
-            ),
-            SizedBox(width: 5,),
-            ElevatedButton(child: Text('add PM'),
-            onPressed: () => handleEaten(_product),
-            ),
-          ],),
-        )]),
+      ])
     );
     // cf. https://github.com/openfoodfacts/smooth-app/issues/2147
     const Set<String> blackListedCategories = <String>{
@@ -377,10 +363,11 @@ class _SummaryCardState extends State<SummaryCard> {
             });
           },
         ),
-        ..._getAttributes(scoreAttributes),
-        if (widget.isFullVersion) ProductQuestionsWidget(_product),
-        attributesContainer,
-        ...summaryCardButtons,
+        SearchedItemMenu(product: _product),
+        // ..._getAttributes(scoreAttributes),
+        // if (widget.isFullVersion) ProductQuestionsWidget(_product),
+        // attributesContainer,
+        // ...summaryCardButtons,
       ],
     );
   }

@@ -119,7 +119,9 @@ class KnowledgePanelWidget extends StatelessWidget {
     final Product product,
     final String panelId,
   ) =>
-      product.knowledgePanels?.panelIdToPanelMap[panelId];
+    product.knowledgePanels?.panelIdToPanelMap[panelId];
+
+      
 
   /// Returns the unique panel element that matches [panelId], or `null`.
   static KnowledgePanelElement? getPanelElement(

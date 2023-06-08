@@ -11,6 +11,7 @@ enum BottomNavigationTab {
   Profile,
   Scan,
   History,
+  Record
 }
 
 /// Here the different tabs in the bottom navigation bar are taken care of,
@@ -29,6 +30,7 @@ class PageManagerState extends State<PageManager> {
     BottomNavigationTab.Profile,
     BottomNavigationTab.Scan,
     BottomNavigationTab.History,
+    BottomNavigationTab.Record,
   ];
 
   final Map<BottomNavigationTab, GlobalKey<NavigatorState>> _navigatorKeys =
@@ -36,6 +38,7 @@ class PageManagerState extends State<PageManager> {
     BottomNavigationTab.Profile: GlobalKey<NavigatorState>(),
     BottomNavigationTab.Scan: GlobalKey<NavigatorState>(),
     BottomNavigationTab.History: GlobalKey<NavigatorState>(),
+    BottomNavigationTab.Record: GlobalKey<NavigatorState>(),
   };
 
   BottomNavigationTab _currentPage = BottomNavigationTab.Scan;
@@ -72,6 +75,7 @@ class PageManagerState extends State<PageManager> {
       _buildOffstageNavigator(BottomNavigationTab.Profile),
       _buildOffstageNavigator(BottomNavigationTab.Scan),
       _buildOffstageNavigator(BottomNavigationTab.History),
+      _buildOffstageNavigator(BottomNavigationTab.Record),
     ];
 
     final UserPreferences userPreferences = context.watch<UserPreferences>();
@@ -108,6 +112,10 @@ class PageManagerState extends State<PageManager> {
         BottomNavigationBarItem(
           icon: const Icon(Icons.history),
           label: appLocalizations.history_navbar_label,
+        ),
+        BottomNavigationBarItem(
+          icon: const Icon(Icons.input),
+          label: appLocalizations.record_navbar_label,
         ),
       ],
     );

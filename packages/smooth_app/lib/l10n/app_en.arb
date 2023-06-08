@@ -413,6 +413,10 @@
     "@history_navbar_label": {
         "description": "BottomNavigationBarLabel: For the history and compare mode"
     },
+    "record_navbar_label": "Record",
+    "@record_navbar_label": {
+        "description": "BottomNavigationBarLabel: For the record mode"
+    },
     "category": "Filter by category",
     "@category": {
         "description": "From a product list, there's a category filter: this is its title"

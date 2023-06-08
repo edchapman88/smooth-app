@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:smooth_app/pages/eds_api/record_page.dart';
 import 'package:smooth_app/pages/history_page.dart';
 import 'package:smooth_app/pages/page_manager.dart';
 import 'package:smooth_app/pages/preferences/user_preferences_page.dart';
@@ -26,6 +27,9 @@ class TabNavigator extends StatelessWidget {
         break;
       case BottomNavigationTab.Scan:
         child = const ScanPage();
+        break;
+      case BottomNavigationTab.Record:
+        child = const RecordPage();
         break;
     }
 
