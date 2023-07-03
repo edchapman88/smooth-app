@@ -32,13 +32,6 @@ packages:
       relative: true
     source: path
     version: "0.0.1"
-  app_store_google_play:
-    dependency: "direct main"
-    description:
-      path: "../app_store/google_play"
-      relative: true
-    source: path
-    version: "0.0.1"
   app_store_shared:
     dependency: "direct main"
     description:
@@ -46,13 +39,6 @@ packages:
       relative: true
     source: path
     version: "1.0.0"
-  app_store_uri:
-    dependency: "direct main"
-    description:
-      path: "../app_store/uri_store"
-      relative: true
-    source: path
-    version: "0.0.1"
   archive:
     dependency: transitive
     description:
@@ -1256,13 +1242,6 @@ packages:
       relative: true
     source: path
     version: "1.0.0"
-  scanner_zxing:
-    dependency: "direct main"
-    description:
-      path: "../scanner/zxing"
-      relative: true
-    source: path
-    version: "0.0.1"
   sentry:
     dependency: transitive
     description:

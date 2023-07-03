@@ -12,7 +12,7 @@ class SearchedItemMenu extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(children: [
-        // for Ingredient ing in product.ingre
+       
         Text(product.knowledgePanels!.panelIdToPanelMap.keys.join('::')),
         Padding(
           padding: const EdgeInsets.all(8.0),

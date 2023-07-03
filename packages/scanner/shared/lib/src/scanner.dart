@@ -1,5 +1,5 @@
 import 'package:flutter/foundation.dart';
-import 'package:scanner_shared/scanner_shared.dart';
+import '../scanner_shared.dart';
 
 /// Export the [CameraImage] class
 export 'package:camera/camera.dart';

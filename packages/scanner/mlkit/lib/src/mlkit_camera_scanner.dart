@@ -9,6 +9,7 @@ import 'package:scanner_mlkit/src/utils/camera_image_cropper.dart';
 import 'package:scanner_mlkit/src/utils/camera_image_full_getter.dart';
 import 'package:scanner_shared/scanner_shared.dart';
 
+@pragma('vm:entry-point')
 class MLKitCameraScanner extends CameraScanner {
   bool _initialized = false;
   late DevModeScanMode _scanMode;
@@ -92,6 +93,8 @@ class MLKitCameraScanner extends CameraScanner {
 ///   -> When the Isolate is started (a [SendPort] is provided to communicate)
 ///   -> When the Isolate is ready (camera description & scan mode are provided)
 ///   -> When an image is decoded
+
+@pragma('vm:entry-point')
 class _MLKitScanDecoderMainIsolate {
   _MLKitScanDecoderMainIsolate({
     required this.camera,
@@ -203,6 +206,7 @@ class _MLKitScanDecoderMainIsolate {
 }
 
 // ignore: avoid_classes_with_only_static_members
+@pragma('vm:entry-point')
 class _MLKitScanDecoderIsolate {
   // Only 1D barcodes. More info on:
   // [https://www.scandit.com/blog/types-barcodes-choosing-right-barcode/]
@@ -228,6 +232,7 @@ class _MLKitScanDecoderIsolate {
   static CameraDescription? _camera;
   static DevModeScanMode? _scanMode;
 
+  @pragma('vm:entry-point')
   static void startIsolate(SendPort port) {
     _port = ReceivePort();
 
