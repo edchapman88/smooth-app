@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:flutter_datetime_picker/flutter_datetime_picker.dart';
 
 class RecordPage extends StatefulWidget {
   const RecordPage();
@@ -10,6 +11,7 @@ class RecordPage extends StatefulWidget {
 class _RecordPageState extends State<RecordPage> {
 
   final inputCtrl = TextEditingController();
+  final selectedDate = ValueNotifier<DateTime>(DateTime.now());
 
   void sendForm () {
 
@@ -18,20 +20,50 @@ class _RecordPageState extends State<RecordPage> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(top: 50,left: 50,right: 50),
+      padding: const EdgeInsets.only(top: 50,left: 10,right: 10),
       child: ListView.separated(
         padding: EdgeInsets.only(bottom: 50),
-        itemCount: 1,
-        separatorBuilder: (BuildContext context, int index) => SizedBox(height: 30,),
+        itemCount: 3,
+        separatorBuilder: (BuildContext context, int index) => SizedBox(height: 10,),
         itemBuilder: (BuildContext context, int index) {
           return [
-          // CREATE____________________________________________________________
+          SizedBox(height: 20,),
+          Card(
+            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+            child: Padding(
+              padding: const EdgeInsets.all(15.0),
+              child: Column(
+                children: [
+                  ValueListenableBuilder(
+                      valueListenable: selectedDate,
+                          builder: (context, value, widget) {
+                            return Text(
+                              selectedDate.value.toString().split('.').first,
+                              style: TextStyle(color: Colors.blue, fontWeight: FontWeight.bold),);
+                          }),
+                  ElevatedButton(
+                    onPressed: () {
+                      DatePicker.showDateTimePicker(context,
+                                            showTitleActions: true,
+                                            minTime: DateTime.now().subtract(const Duration(days: 7)),
+                                            maxTime: DateTime.now().add(const Duration(days: 2)),
+                                            onConfirm: (DateTime date) {
+                                              selectedDate.value = date;
+                                            },
+                                            currentTime: DateTime.now(), locale: LocaleType.en);
+                    },
+                    child: Text('select date')
+                    ),
+                ],
+              ),
+            )
+          ),
           Card(
             shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
             // color: ,
             // shadowColor: UiKit.palette.shadow,
             child: Padding(
-              padding: const EdgeInsets.all(20.0),
+              padding: const EdgeInsets.all(15.0),
               child: Column(
                 children: [
                   Text("Create a DID"),
