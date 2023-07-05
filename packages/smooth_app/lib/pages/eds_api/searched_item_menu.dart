@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:openfoodfacts/openfoodfacts.dart';
 import 'package:smooth_app/pages/eds_api/handle_eaten.dart';
-import 'package:flutter_datetime_picker/flutter_datetime_picker.dart';
+import 'package:smooth_app/pages/eds_api/pick_date_time.dart';
 
 class SearchedItemMenu extends StatelessWidget {
   final Product product;
@@ -62,17 +62,14 @@ class SearchedItemMenu extends StatelessWidget {
             ElevatedButton(
               style: ButtonStyle(),
               onPressed: () {
-                DatePicker.showDateTimePicker(context,
-                                      showTitleActions: true,
-                                      minTime: DateTime.now().subtract(const Duration(days: 7)),
-                                      maxTime: DateTime.now().add(const Duration(days: 2)),
-                                      onConfirm: (DateTime date) {
-                                        handleEaten(product, date);
-                                        ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-                                          content: Text("Successfully added"),
-                                        ));
-                                      },
-                                      currentTime: DateTime.now(), locale: LocaleType.en);
+                pickDateTime(context).then((date) {
+                    if (date != null) {
+                      handleEaten(product, date);
+                      ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                        content: Text("Successfully added"),
+                      ));
+                    }
+                  });
               },
               child: Text('add at date-time'))
           ],

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:package_info_plus/package_info_plus.dart';
+// import 'package:package_info_plus/package_info_plus.dart';
 import 'package:smooth_app/data_models/user_preferences.dart';
 import 'package:smooth_app/generic_lib/design_constants.dart';
 import 'package:smooth_app/generic_lib/dialogs/smooth_alert_dialog.dart';
@@ -98,7 +98,7 @@ class UserPreferencesFaq extends AbstractUserPreferences {
       'assets/app/release_icon_dark_transparent_no_border.svg';
 
   Future<void> _about() async {
-    final PackageInfo packageInfo = await PackageInfo.fromPlatform();
+    // final PackageInfo packageInfo = await PackageInfo.fromPlatform();
     // ignore: use_build_context_synchronously
     showDialog<void>(
       context: context,
@@ -124,12 +124,12 @@ class UserPreferencesFaq extends AbstractUserPreferences {
                       children: <Widget>[
                         FittedBox(
                           child: Text(
-                            packageInfo.appName,
+                            'food',
                             style: themeData.textTheme.displayLarge,
                           ),
                         ),
                         Text(
-                          '${packageInfo.version}+${packageInfo.buildNumber}-$flavour',
+                          '1.0-$flavour',
                           style: themeData.textTheme.titleSmall,
                         )
                       ],
@@ -194,8 +194,8 @@ class UserPreferencesFaq extends AbstractUserPreferences {
 
               showLicensePage(
                 context: context,
-                applicationName: packageInfo.appName,
-                applicationVersion: packageInfo.version,
+                applicationName: 'food',
+                applicationVersion: '1.0',
                 applicationIcon: SvgPicture.asset(
                   logo,
                   height: MediaQuery.of(context).size.height * 0.1,

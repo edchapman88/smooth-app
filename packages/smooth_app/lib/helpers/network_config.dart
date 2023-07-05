@@ -3,7 +3,7 @@ import 'dart:io';
 import 'package:device_info_plus/device_info_plus.dart' deferred as dip;
 import 'package:flutter/services.dart';
 import 'package:openfoodfacts/openfoodfacts.dart';
-import 'package:package_info_plus/package_info_plus.dart';
+// import 'package:package_info_plus/package_info_plus.dart';
 import 'package:smooth_app/helpers/app_helper.dart';
 import 'package:uuid/uuid.dart';
 
@@ -24,10 +24,10 @@ String _getUuidId() {
 }
 
 Future<void> _initUserAgent() async {
-  final PackageInfo packageInfo = await PackageInfo.fromPlatform();
+  // final PackageInfo packageInfo = await PackageInfo.fromPlatform();
 
-  final String name = 'Smoothie - ${packageInfo.appName}';
-  final String version = '${packageInfo.version}+${packageInfo.buildNumber}';
+  final String name = 'Smoothie';
+  final String version = '1.0';
   final String system =
       '${Platform.operatingSystem}+${Platform.operatingSystemVersion}';
   final String id = _getUuidId();

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
-import 'package:flutter_datetime_picker/flutter_datetime_picker.dart';
+import 'package:smooth_app/pages/eds_api/pick_date_time.dart';
 
 class RecordPage extends StatefulWidget {
   const RecordPage();
@@ -43,15 +42,15 @@ class _RecordPageState extends State<RecordPage> {
                           }),
                   ElevatedButton(
                     onPressed: () {
-                      DatePicker.showDateTimePicker(context,
-                                            showTitleActions: true,
-                                            minTime: DateTime.now().subtract(const Duration(days: 7)),
-                                            maxTime: DateTime.now().add(const Duration(days: 2)),
-                                            onConfirm: (DateTime date) {
-                                              selectedDate.value = date;
-                                            },
-                                            currentTime: DateTime.now(), locale: LocaleType.en);
-                    },
+                      pickDateTime(context).then((date) {
+                            if (date != null) {
+                              selectedDate.value = date;
+                            }
+                          });
+                          
+                        },
+                      // });
+                    // },
                     child: Text('select date')
                     ),
                 ],

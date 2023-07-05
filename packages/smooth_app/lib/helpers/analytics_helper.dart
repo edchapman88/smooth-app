@@ -3,7 +3,7 @@ import 'dart:async';
 import 'package:flutter/foundation.dart';
 import 'package:matomo_tracker/matomo_tracker.dart';
 import 'package:openfoodfacts/openfoodfacts.dart';
-import 'package:package_info_plus/package_info_plus.dart';
+// import 'package:package_info_plus/package_info_plus.dart';
 import 'package:sentry_flutter/sentry_flutter.dart';
 import 'package:smooth_app/main.dart';
 
@@ -89,14 +89,14 @@ class AnalyticsHelper {
   static Future<void> initSentry({
     required Function()? appRunner,
   }) async {
-    final PackageInfo packageInfo = await PackageInfo.fromPlatform();
+    // final PackageInfo packageInfo = await PackageInfo.fromPlatform();
 
     await SentryFlutter.init(
       (SentryOptions options) {
         options.dsn =
             'https://22ec5d0489534b91ba455462d3736680@o241488.ingest.sentry.io/5376745';
         options.sentryClientName =
-            'sentry.dart.smoothie/${packageInfo.version}';
+            'sentry.dart.smoothie/1.0';
         // To set a uniform sample rate
         options.tracesSampleRate = 1.0;
         options.beforeSend = _beforeSend;

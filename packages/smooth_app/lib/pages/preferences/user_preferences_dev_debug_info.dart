@@ -2,7 +2,7 @@ import 'package:device_info_plus/device_info_plus.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:openfoodfacts/openfoodfacts.dart';
-import 'package:package_info_plus/package_info_plus.dart';
+// import 'package:package_info_plus/package_info_plus.dart';
 import 'package:smooth_app/main.dart';
 import 'package:smooth_app/query/product_query.dart';
 import 'package:smooth_app/widgets/smooth_scaffold.dart';
@@ -43,12 +43,12 @@ class _UserPreferencesDebugInfoState extends State<UserPreferencesDebugInfo> {
       infos.putIfAbsent('Model', () => deviceInfo.model);
       infos.putIfAbsent('localizedModel', () => deviceInfo.localizedModel);
     }
-    final PackageInfo packageInfo = await PackageInfo.fromPlatform();
+    // final PackageInfo packageInfo = await PackageInfo.fromPlatform();
 
-    infos.putIfAbsent('Version', () => packageInfo.version);
-    infos.putIfAbsent('BuildNumber', () => packageInfo.buildNumber);
+    infos.putIfAbsent('Version', () => '1.0');
+    infos.putIfAbsent('BuildNumber', () => '1');
     infos.putIfAbsent('Flavour', () => flavour);
-    infos.putIfAbsent('PackageName', () => packageInfo.packageName);
+    infos.putIfAbsent('PackageName', () => 'food');
   }
 
   @override

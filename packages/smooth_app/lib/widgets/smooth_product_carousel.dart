@@ -5,7 +5,7 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:package_info_plus/package_info_plus.dart';
+// import 'package:package_info_plus/package_info_plus.dart';
 import 'package:provider/provider.dart';
 import 'package:smooth_app/cards/product_cards/smooth_product_base_card.dart';
 import 'package:smooth_app/cards/product_cards/smooth_product_card_error.dart';
@@ -325,9 +325,7 @@ class _SearchCardTagLineState extends State<_SearchCardTagLine> {
   }
 
   Future<bool> _isApplicationDeprecated() {
-    return PackageInfo.fromPlatform().then(
-      (PackageInfo value) => value.packageName != 'org.openfoodfacts.scanner',
-    );
+    return Future(() => false);
   }
 }
 

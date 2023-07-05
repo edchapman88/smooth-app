@@ -4,7 +4,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_email_sender/flutter_email_sender.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:package_info_plus/package_info_plus.dart';
+// import 'package:package_info_plus/package_info_plus.dart';
 import 'package:smooth_app/data_models/user_preferences.dart';
 import 'package:smooth_app/generic_lib/design_constants.dart';
 import 'package:smooth_app/generic_lib/dialogs/smooth_alert_dialog.dart';
@@ -212,11 +212,11 @@ class UserPreferencesConnect extends AbstractUserPreferences {
       deviceText = '';
     }
 
-    final PackageInfo packageInfo = await PackageInfo.fromPlatform();
+    // final PackageInfo packageInfo = await PackageInfo.fromPlatform();
 
     buffer.writeln(
-      appLocalizations.contact_form_body(deviceText, packageInfo.version,
-          packageInfo.buildNumber, packageInfo.packageName),
+      appLocalizations.contact_form_body(deviceText, '1.0',
+          '1', 'food'),
     );
 
     return buffer.toString();

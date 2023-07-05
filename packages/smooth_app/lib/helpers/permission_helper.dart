@@ -127,6 +127,8 @@ class DevicePermission {
         return DevicePermissionStatus.limited;
       case PermissionStatus.permanentlyDenied:
         return DevicePermissionStatus.permanentlyDenied;
+      case PermissionStatus.provisional:
+        return DevicePermissionStatus.granted;
     }
   }
 
