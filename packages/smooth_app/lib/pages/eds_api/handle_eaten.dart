@@ -6,7 +6,7 @@ import 'package:http/http.dart' as http;
 
 
 void handleEaten(Product product, [DateTime? time]) async  {
-  var url = dotenv.env['BACKEND_URL']! + 'postData';
+  var url = dotenv.env['BACKEND_URL']! + 'productData';
   var now = DateTime.now();
   if (time != null) {
     now = time;

@@ -14,6 +14,7 @@ class SearchedItemMenu extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(crossAxisAlignment: CrossAxisAlignment.start,
       children: [
+        SizedBox(height: 20,),
         Column(children: [
           Container(
             padding: EdgeInsetsDirectional.symmetric(vertical: 2),
@@ -46,6 +47,7 @@ class SearchedItemMenu extends StatelessWidget {
             ],),
           )
         ]),
+        SizedBox(height: 20,),
           
         Padding(
           padding: const EdgeInsets.all(8.0),
@@ -71,7 +73,8 @@ class SearchedItemMenu extends StatelessWidget {
                     }
                   });
               },
-              child: Text('add at date-time'))
+              child: Text('add at date-time')
+            )
           ],
           ),
         ),
