@@ -1,10 +1,8 @@
-import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:smooth_app/pages/eds_api/button_style.dart';
 import 'package:smooth_app/pages/eds_api/check_box_card.dart';
 import 'package:smooth_app/pages/eds_api/handle_record.dart';
-import 'package:smooth_app/pages/eds_api/pick_date_time.dart';
 import 'package:smooth_app/pages/eds_api/record_interface.dart';
 import 'package:smooth_app/pages/eds_api/slider_card.dart';
 
@@ -50,8 +48,8 @@ class _RecordPageState extends State<RecordPage> {
         pm_overwhelmed: pm_overwhelmed
       )
     );
-    print(jsonEncode(record));
-    // handleRecord(record);
+    // print(jsonEncode(record));
+    handleRecord(record);
     ScaffoldMessenger.of(context).showSnackBar(SnackBar(
       content: Text("Successfully recorded"),
     ));

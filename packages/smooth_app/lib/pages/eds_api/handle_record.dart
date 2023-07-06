@@ -7,6 +7,6 @@ import 'package:smooth_app/pages/eds_api/record_interface.dart';
 void handleRecord(RecordObj record) async  {
   var url = dotenv.env['BACKEND_URL']! + 'recordData';
   var res = await http.post(Uri.parse(url), body: jsonEncode(record));
-  print(res);
+  // print(res.toString());
 }
 
