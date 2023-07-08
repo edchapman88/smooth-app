@@ -73,6 +73,8 @@ class SummaryCard extends StatefulWidget {
 
   /// If true, the product will be editable
   final bool isProductEditable;
+
+
   @override
   State<SummaryCard> createState() => _SummaryCardState();
 }
@@ -88,6 +90,9 @@ class _SummaryCardState extends State<SummaryCard> {
 
   // For some reason, special case for "label" attributes
   final Set<String> _attributesToExcludeIfStatusIsUnknown = <String>{};
+
+  String _customServing = '2';
+  final _servingController = TextEditingController();
 
   @override
   void initState() {
@@ -363,7 +368,11 @@ class _SummaryCardState extends State<SummaryCard> {
             });
           },
         ),
-        SearchedItemMenu(product: _product),
+        SearchedItemMenu(
+          product: _product,
+          serving: _customServing,
+          servingController: _servingController,
+          onChangeServing: (val) {setState(() {_customServing = val;});}),
         // ..._getAttributes(scoreAttributes),
         // if (widget.isFullVersion) ProductQuestionsWidget(_product),
         // attributesContainer,
