@@ -136,7 +136,7 @@ class _RecordPageState extends State<RecordPage> {
           SliderCard('AM IBSD duration', am_ibsd_duration, 3, 3, (val) {setState(() {am_ibsd_duration = val;});}),
           SliderCard('PM IBSD intensity', pm_ibsd_intensity, 3, 3, (val) {setState(() {pm_ibsd_intensity = val;});}),
           SliderCard('PM IBSD duration', pm_ibsd_duration, 3, 3, (val) {setState(() {pm_ibsd_duration = val;});}),
-          CheckBoxCard('nausea', nausea, (val) => nausea = val),
+          CheckBoxCard('nausea', nausea, (val) {setState(() {nausea = val;});}),
           CheckBoxCard('AM feel overwhelmed', am_overwhelmed, (val) {setState(() {am_overwhelmed = val;});}),
           CheckBoxCard('PM feel overwhelmed', pm_overwhelmed, (val) {setState(() {pm_overwhelmed = val;});}),
           Card(
